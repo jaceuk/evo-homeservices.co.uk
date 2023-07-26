@@ -3,14 +3,13 @@ import { Picture } from '@astrojs/image/components';
 
 interface Props {
 	image: ImageMetadata;
-	title: string;
 	children: any;
 	href?: string;
 	linkText?: string;
 	imagePosition?: 'left' | 'right';
 }
 
-const { image, title, href, linkText, imagePosition = 'right' } = Astro.props;
+const { image, href, linkText, imagePosition = 'right' } = Astro.props;
 ---
 
 <article class={`image-${imagePosition}`}>
@@ -18,7 +17,6 @@ const { image, title, href, linkText, imagePosition = 'right' } = Astro.props;
 		<Picture class="background" src={image} widths={[200, 400, 800, 1100]} alt="" />
 	</div>
 	<div class="text">
-		{title && <h3>{title}</h3>}
 		<slot />
 		{
 			href && (

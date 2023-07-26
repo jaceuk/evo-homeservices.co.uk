@@ -1,21 +1,83 @@
 ---
+import { Image } from '@astrojs/image/components';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getAllReviews } from '../utils/reviews';
 import type { Review } from '../utils/types';
-import ServicesPage from '../components/pages/ServicesPage.astro';
+import Hero from '../components/hero/Hero.astro';
+import HeroImage from '../images/bg-home.jpg';
+import Reviews from '../components/Reviews.astro';
+import ServiceInfoCard from '../components/ServiceInfoCard.astro';
+import DrainageImage from '../images/info-drainage.jpg';
+import DrainageLogo from '../images/logo-drainage.svg';
+import PlumbingImage from '../images/info-plumbing.jpg';
+import PlumbingLogo from '../images/logo-plumbing.svg';
+import Section from '../components/Section.astro';
 
 const reviews: Review[] = await getAllReviews();
-const twelveReviews = reviews.slice(0, 12);
+const firstEightReviews = reviews.slice(0, 8);
 
-const title = 'Drain Unblocking, Clearance and Repairs | EVO Drainage Services';
+const title =
+	'Plumbing, Heating and Drainage Experts in South East England | EVO Drainage Services';
 const description =
-	'Welcome to EVO Drainage Services, your first choice for Drain Unblocking, Clearance and Repairs in South East England.';
+	'Welcome to EVO Drainage Services, your first choice for Plumbing, Heating and Drainage in South East England.';
 ---
 
 <BaseLayout title={title} description={description}>
-	<ServicesPage
-		service="Drain Unblocking, Clearance and Repairs"
-		reviews={twelveReviews}
-		county="South East England"
+	<Hero
+		service="Plumbing, Heating and Drainage Experts"
+		location="South East England"
+		image={HeroImage}
 	/>
+
+	<Section>
+		<div class="wrapper">
+			<ServiceInfoCard
+				image={PlumbingImage}
+				href="https://www.evo-plumbingandheating.co.uk/"
+				linkText="Visit our Plumbing and Heating website"
+			>
+				<Image class="logo" src={PlumbingLogo} alt="EVO Drainage logo" />
+				<h3>Plumbing and Heating Services</h3>
+				<p>
+					Your <strong>preferred choice</strong> for planned and emergency <strong
+						>plumbing and heating work</strong
+					>.
+				</p>
+				<p>
+					Our emergency response team is available 24 hours a day, 7 days a week. From <strong
+						>boiler breakdowns</strong
+					> to <strong>burst pipe and water leak repairs</strong>, all our work is carefully
+					undertaken and fully guaranteed for your added peace of mind.
+				</p>
+			</ServiceInfoCard>
+
+			<ServiceInfoCard
+				image={DrainageImage}
+				href="https://www.evo-drainage.co.uk/"
+				linkText="Visit our Drainage website"
+				imagePosition="left"
+			>
+				<Image class="logo" src={DrainageLogo} alt="EVO Drainage logo" />
+				<h3>Drainage Services</h3>
+				<p>
+					Issues with <strong>blocked drains</strong> or a <strong>blocked toilet/sink</strong>?
+				</p>
+				<p>
+					From planned maintenance work to emergency drain repairs, choose EVO Drainage Services and
+					receive the assistance you need. Our dedicated team have a <strong
+						>wealth of experience in tackling both common and complex drainage problems</strong
+					>.
+				</p>
+			</ServiceInfoCard>
+		</div>
+	</Section>
+
+	<Reviews reviews={firstEightReviews} />
 </BaseLayout>
+
+<style lang="scss">
+	.wrapper {
+		display: grid;
+		gap: var(--scale-32-64);
+	}
+</style>
