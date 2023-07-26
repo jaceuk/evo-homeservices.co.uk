@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getAllReviews } from '../utils/reviews';
+import type { Review } from '../utils/types';
+import ServicesPage from '../components/pages/ServicesPage.astro';
+
+const reviews: Review[] = await getAllReviews();
+const twelveReviews = reviews.slice(0, 12);
+
+const title = 'Drain Unblocking, Clearance and Repairs | EVO Drainage Services';
+const description =
+	'Welcome to EVO Drainage Services, your first choice for Drain Unblocking, Clearance and Repairs in South East England.';
+---
+
+<BaseLayout title={title} description={description}>
+	<ServicesPage
+		service="Drain Unblocking, Clearance and Repairs"
+		reviews={twelveReviews}
+		county="South East England"
+	/>
+</BaseLayout>

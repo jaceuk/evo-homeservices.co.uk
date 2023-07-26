@@ -1,0 +1,58 @@
+---
+import ServiceInfoCard from '../../../../ServiceInfoCard.astro';
+import BlockedToilets from '../../../../../images/info-blocked-toilets.jpg';
+import BlockedSinks from '../../../../../images/info-blocked-sinks.jpg';
+import BlockedDrains from '../../../../../images/info-blocked-drains.jpg';
+
+interface Props {
+	location: string;
+}
+
+const { location } = Astro.props;
+---
+
+<ServiceInfoCard title={`Blocked Drains in ${location}`} image={BlockedDrains}>
+	<p>
+		Drain blockage can result from hair, soap, mineral build-up, toilet paper build-up and food
+		waste, to name a few. We use specific equipment to clear blockages effectively from internal and
+		external drains. For instance, we resolve clogs in your external drain with rods with
+		attachments or high-pressure jetting. For internal drains, we may use one of many hand tools,
+		mechanical equipment or micro jetting equipment, depending on the type of problem.
+	</p>
+	<p>
+		It is also possible that tree roots may be growing inside cracks or leaks in underground pipes.
+		Our CCTV survey will reveal if this is the case and a suitable solution can be pursued to ensure
+		that the problem does not return.
+	</p>
+</ServiceInfoCard>
+
+<ServiceInfoCard
+	title={`Blocked Toilets in ${location}`}
+	image={BlockedToilets}
+	imagePosition="left"
+>
+	<p>
+		Many of the same substances that cause drain blockage can also clog toilets. If you think all
+		you need is a plunger and a bit of practice to have your toilet up and running, think again. You
+		may just end up making the problem messier and stinkier!
+	</p>
+	<p>
+		Our {location} engineers expertly unclog blocked toilets with specialist tools. The downtime is minimal
+		and we are available during morning and night hours. We also flush through the drains to prevent
+		the issue from recurring. At many {location}
+		homes with one toilet, our service has been invaluable and restored hygiene to an important functional
+		area of the home.
+	</p>
+</ServiceInfoCard>
+
+<ServiceInfoCard title={`Blocked Sinks in ${location}`} image={BlockedSinks}>
+	<p>
+		Noticed standing water in your kitchen or bathroom sink? We can diagnose the cause of blockage
+		and take the necessary steps to clear the pipework. Our {location} engineers have a strong track-record
+		of responding immediately to overflowing baths and slow running sinks.
+	</p>
+	<p>
+		A manual unblock will typically take care of the problem. Sometimes, the pipework may require
+		more extensive effort. In either case, we have you covered.
+	</p>
+</ServiceInfoCard>

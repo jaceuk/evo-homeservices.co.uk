@@ -1,0 +1,36 @@
+---
+import { FREEPHONE_NUMBER } from '../../../../../utils/constants';
+
+interface Props {
+	location: string;
+	locationTel: string;
+}
+
+const { location, locationTel } = Astro.props;
+---
+
+<h2 class="h3">
+	Do you need Drain Repairs and live in {location} or the surrounding area?
+</h2>
+<h3 class="h4 coloured-text">
+	Call us now on {
+		locationTel ? locationTel : `Freephone ${FREEPHONE_NUMBER} - 24 hour Emergency Helpline`
+	}
+</h3>
+
+<p>
+	Whatever the issue, if left untreated then blockages and leaks can occur which can cause further
+	problems and expense.
+</p>
+<p>
+	Over time, wear and tear can result in breakages in your drainage system, or it may be that ground
+	movement or corrosion is causing your drainage system to falter.
+</p>
+<p>
+	We can replace parts of a system, make repairs to minor system damage or completely remove and
+	replace an entire drainage system.
+</p>
+<h3 class="h4">
+	We are confident <strong>we can tackle any issue when it comes to your drainage system</strong> in
+	{location}.
+</h3>

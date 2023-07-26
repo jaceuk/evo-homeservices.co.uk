@@ -1,0 +1,70 @@
+---
+import ServiceInfoCard from '../../../../ServiceInfoCard.astro';
+import BlockedToilets from '../../../../../images/info-blocked-toilets.jpg';
+import BlockedSinks from '../../../../../images/info-blocked-sinks.jpg';
+import BlockedDrains from '../../../../../images/info-blocked-drains.jpg';
+
+interface Props {
+	location: string;
+}
+
+const { location } = Astro.props;
+---
+
+<ServiceInfoCard
+	title={`Unattended blocked drains can cause structural damage in ${location}`}
+	image={BlockedDrains}
+>
+	<p>
+		While it is rare for homeowners to delay fixing their blocked drain, those who stay away for
+		long periods or live on a different property may not feel the same sense of urgency.
+		Unfortunately, stagnant water can seep into the foundation of the house and affect its
+		structural integrity. It is also possible for water to creep into the walls and floorboards,
+		causing discoloration and warps.
+	</p>
+	<p>We prevent the problem from escalating by:</p>
+	<ul>
+		<li>Clearing the external drain using rods or water jetting</li>
+		<li>
+			Clearing the internal drain using hand tools, mechanical equipment or micro jetting machines
+		</li>
+		<li>
+			Performing a CCTV investigation (if needed) to check the blockage is caused by damaged
+			pipework or root ingress
+		</li>
+	</ul>
+	<p>Standard rates apply for most clearance work in {location}.</p>
+</ServiceInfoCard>
+
+<ServiceInfoCard
+	title={`A blocked toilet in any ${location} household requires immediate attention`}
+	image={BlockedToilets}
+	imagePosition="left"
+>
+	<p>
+		Most cases of toilet blockage can be blamed on flushing non-flushable items. A blocked toilet
+		trap or plumbing vent may also lead to clogs. Our {location} engineers diagnose the issue accurately
+		and go about resolving, ensuring minimal disruption. In the event that more extensive work or people
+		are required to address the problem, we explain what is needed with simplicity and clarity.
+	</p>
+	<p>
+		Our specialist toolkit enables us to clear out blocked toilets completely. We also flush through
+		the drains to prevent the problem from surfacing again.
+	</p>
+</ServiceInfoCard>
+
+<ServiceInfoCard title={`Blocked Sinks in ${location} need expert treatment`} image={BlockedSinks}>
+	<p>
+		We clear pipework at your sink shower, bath and basin pipe outlet expertly through a manual
+		mechanism or by employing the best tools of the trade. Our vans carry the equipment necessary to
+		resolve all manner of blocked sink issues quickly.
+	</p>
+	<p>
+		Have our {location} engineers inspect your sink when you spot the following problems:
+	</p>
+	<ul>
+		<li>The sink is draining slowly</li>
+		<li>An unpleasant smell rises from the drain</li>
+		<li>The drain keeps making gurgling sounds</li>
+	</ul>
+</ServiceInfoCard>

@@ -1,0 +1,52 @@
+---
+import { FREEPHONE_NUMBER } from '../../../../../utils/constants';
+
+interface Props {
+	location: string;
+	locationTel: string;
+}
+
+const { location, locationTel } = Astro.props;
+---
+
+<p>
+	Finding a blockage in your home's plumbing and drainage is perhaps the stickiest situation you may
+	find yourself in. If you are a resident of {location} or the neighbouring area, get in touch with us
+	now to resolve the issue.
+</p>
+
+<h3 class="h4 coloured-text">
+	Call us now on {
+		locationTel ? locationTel : `Freephone ${FREEPHONE_NUMBER} - 24 hour Emergency Helpline`
+	}
+</h3>
+
+<p>We are available twenty-four hours a day and seven days a week!</p>
+
+<h2 class="h4">Why choose us?</h2>
+<p>
+	As blocked drain cleaning specialists, we bring the following differentiating points to the table:
+</p>
+<ul>
+	<li>
+		<p>
+			<strong>Experienced</strong> - Our team comprises of expert and experienced specialists who know
+			how to do the job in the best way. They are capable of resolving the problem without causing any
+			disruption in your routine life.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>Skilled</strong> - We have an arsenal of tools and equipment that help us do the job efficiently.
+			We have the bandwidth to deal with both internal and external drain blockages thanks to our adept
+			and savvy professionals.
+		</p>
+	</li>
+	<li>
+		<p>
+			<strong>Prompt services</strong> - Our customers are valuable to us, and we seek to serve them
+			the best. Our 24x7 services address urgent and non-urgent situations faced by homeowners, making
+			us a fast and reliable blocked drain specialist in {location}.
+		</p>
+	</li>
+</ul>

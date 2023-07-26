@@ -1,0 +1,31 @@
+---
+import { FREEPHONE_NUMBER } from '../../../../../utils/constants';
+
+interface Props {
+	location: string;
+	locationTel: string;
+}
+
+const { location, locationTel } = Astro.props;
+---
+
+<h2>Your preferred provider of CCTV drain surveys and drain tests in {location}</h2>
+<p>
+	We have a strong track-record of diagnosing drainage system problems and safety issues extracted
+	from the evidence presented in surveys and tests. Whether you're assessing a home prior to
+	purchase or need to demonstrate drainage efficacy before a building inspector, we have you
+	covered.
+</p>
+
+<h3 class="h4 coloured-text">
+	Call us now on {locationTel ? locationTel : `Freephone ${FREEPHONE_NUMBER}`} to schedule a drain survey
+	or test.
+</h3>
+
+<p>We look forward to assisting you.</p>
+<p>
+	CCTV drain surveys have become a popular means of identifying drainage problems in advance to
+	prevent any potential disasters, particularly an overflow in the home. The survey uses water-proof
+	camera equipment to provide a detailed look into the complete drainage system to identify problems
+	causing or likely to cause problems.
+</p>

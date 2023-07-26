@@ -1,0 +1,41 @@
+---
+import { FREEPHONE_NUMBER } from '../../../../../utils/constants';
+
+interface Props {
+	location: string;
+	locationTel: string;
+}
+
+const { location, locationTel } = Astro.props;
+---
+
+<p>
+	The blockage in your drain can be traced to objects and debris or to damaged pipework. Our
+	engineers can carry out the suitable drain clearing procedure and prevent it from occurring in the
+	future.
+</p>
+<p>
+	Our 24x7 service is available to all homes in {location} or the surrounding area.
+</p>
+
+<h3 class="h4 coloured-text">
+	Call us now on {
+		locationTel ? locationTel : `Freephone ${FREEPHONE_NUMBER} - 24 hour Emergency Helpline`
+	}
+</h3>
+
+<h2 class="h4">We are {location}'s top-rated drainage expert</h2>
+<p>
+	Our local team of engineers are able to attend to emergency requests on an immediate basis and
+	schedule quick appointments for non-urgent needs.
+</p>
+<p>
+	We maintain vans equipped with the latest drain cleaning equipment to break down all types of
+	blockages. Our accurate diagnosis and efficient procedure clear drains and render them free
+	flowing quickly. We ensure minimal disruption and downtime for you.
+</p>
+<p>
+	We charge standard rates for most of our clearance work in {location}, so you can estimate a
+	fixed, reasonable cost from the get-go.
+</p>
+<p>Please feel free to talk to us for more information regarding our drain unblocking services.</p>

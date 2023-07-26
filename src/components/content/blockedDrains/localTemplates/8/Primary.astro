@@ -1,0 +1,40 @@
+---
+import { FREEPHONE_NUMBER } from '../../../../../utils/constants';
+
+interface Props {
+	location: string;
+	locationTel: string;
+}
+
+const { location, locationTel } = Astro.props;
+---
+
+<h2>Blocked drains and inconvenient and can turn into a breeding ground for bacteria.</h2>
+
+<p>
+	{location} residents rely on us to flush the drain of whatever content is causing the clog. Don't wait
+	for the problem to fester.
+</p>
+
+<h3 class="h4 coloured-text">
+	Get it touch with our 24x7 service on {
+		locationTel ? locationTel : `Freephone ${FREEPHONE_NUMBER} - 24 hour Emergency Helpline`
+	}
+</h3>
+
+<h2 class="h4">We are a trusted {location} drainage expert</h2>
+<p>
+	EVO is a local provider of drain investigation and clearing services, coming to the rescue of
+	residents facing emergency or non-urgent issues in their kitchen or bathroom.
+</p>
+<p>
+	At your beck and call is our team of {location} engineers who possess extensive experience unclogging
+	the most stubborn blockages flawlessly, safely and without any disruption to your daily routine. We
+	have a vast toolkit to resolve all types of issues, whether manually or through the use of sophisticated
+	equipment.
+</p>
+<p>
+	Our 24x7 service means we can attend to your problem whenever you require our expertise. Call us
+	if you notice water draining slowly from your sink or a persistent foul odour emanating from your
+	home's drain.
+</p>

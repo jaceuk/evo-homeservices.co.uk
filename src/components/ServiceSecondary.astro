@@ -1,0 +1,139 @@
+---
+import Section from './Section.astro';
+
+import BlockedDrains from './content/blockedDrains/Secondary.astro';
+import BlockedDrainsLocalTemplate1 from './content/blockedDrains/localTemplates/1/Secondary.astro';
+import BlockedDrainsLocalTemplate2 from './content/blockedDrains/localTemplates/2/Secondary.astro';
+import BlockedDrainsLocalTemplate3 from './content/blockedDrains/localTemplates/3/Secondary.astro';
+import BlockedDrainsLocalTemplate4 from './content/blockedDrains/localTemplates/4/Secondary.astro';
+import BlockedDrainsLocalTemplate5 from './content/blockedDrains/localTemplates/5/Secondary.astro';
+import BlockedDrainsLocalTemplate6 from './content/blockedDrains/localTemplates/6/Secondary.astro';
+import BlockedDrainsLocalTemplate7 from './content/blockedDrains/localTemplates/7/Secondary.astro';
+import BlockedDrainsLocalTemplate8 from './content/blockedDrains/localTemplates/8/Secondary.astro';
+import BlockedDrainsLocalTemplate9 from './content/blockedDrains/localTemplates/9/Secondary.astro';
+import BlockedDrainsLocalTemplate10 from './content/blockedDrains/localTemplates/10/Secondary.astro';
+
+import CctvDrainSurveys from './content/cctvDrainSurveys/Secondary.astro';
+import CctvDrainSurveysLocalTemplate1 from './content/cctvDrainSurveys/localTemplates/1/Secondary.astro';
+import CctvDrainSurveysLocalTemplate2 from './content/cctvDrainSurveys/localTemplates/2/Secondary.astro';
+import CctvDrainSurveysLocalTemplate3 from './content/cctvDrainSurveys/localTemplates/3/Secondary.astro';
+import CctvDrainSurveysLocalTemplate4 from './content/cctvDrainSurveys/localTemplates/4/Secondary.astro';
+import CctvDrainSurveysLocalTemplate5 from './content/cctvDrainSurveys/localTemplates/5/Secondary.astro';
+import CctvDrainSurveysLocalTemplate6 from './content/cctvDrainSurveys/localTemplates/6/Secondary.astro';
+
+import DrainRepairs from './content/drainRepairs/Secondary.astro';
+import DrainRepairsLocalTemplate1 from './content/drainRepairs/localTemplates/1/Secondary.astro';
+import DrainRepairsLocalTemplate2 from './content/drainRepairs/localTemplates/2/Secondary.astro';
+import DrainRepairsLocalTemplate3 from './content/drainRepairs/localTemplates/3/Secondary.astro';
+
+import Soakaways from './content/soakaways/Secondary.astro';
+import SoakawaysLocalTemplate1 from './content/soakaways/localTemplates/1/Secondary.astro';
+import SoakawaysLocalTemplate2 from './content/soakaways/localTemplates/2/Secondary.astro';
+import SoakawaysLocalTemplate3 from './content/soakaways/localTemplates/3/Secondary.astro';
+
+import GutterCleaning from './content/gutterCleaning/Secondary.astro';
+import GutterCleaningLocalTemplate1 from './content/gutterCleaning/localTemplates/1/Secondary.astro';
+import GutterCleaningLocalTemplate2 from './content/gutterCleaning/localTemplates/2/Secondary.astro';
+import GutterCleaningLocalTemplate3 from './content/gutterCleaning/localTemplates/3/Secondary.astro';
+
+interface Props {
+	locationSlug?: string;
+	serviceSlug: string;
+	localTemplateNumber: number;
+	location: string;
+	locationTel?: string;
+}
+
+const { locationSlug = '', serviceSlug, localTemplateNumber, location, locationTel } = Astro.props;
+
+let Content: any = '<div></div>';
+
+if (serviceSlug === 'blocked-drains') {
+	if (!localTemplateNumber) Content = BlockedDrains;
+	if (localTemplateNumber === 1) Content = BlockedDrainsLocalTemplate1;
+	if (localTemplateNumber === 2) Content = BlockedDrainsLocalTemplate2;
+	if (localTemplateNumber === 3) Content = BlockedDrainsLocalTemplate3;
+	if (localTemplateNumber === 4) Content = BlockedDrainsLocalTemplate4;
+	if (localTemplateNumber === 5) Content = BlockedDrainsLocalTemplate5;
+	if (localTemplateNumber === 6) Content = BlockedDrainsLocalTemplate6;
+	if (localTemplateNumber === 7) Content = BlockedDrainsLocalTemplate7;
+	if (localTemplateNumber === 8) Content = BlockedDrainsLocalTemplate8;
+	if (localTemplateNumber === 9) Content = BlockedDrainsLocalTemplate9;
+	if (localTemplateNumber === 10) Content = BlockedDrainsLocalTemplate10;
+}
+if (serviceSlug === 'cctv-drain-surveys') {
+	if (!localTemplateNumber) Content = CctvDrainSurveys;
+	if (localTemplateNumber === 1) Content = CctvDrainSurveysLocalTemplate1;
+	if (localTemplateNumber === 2) Content = CctvDrainSurveysLocalTemplate2;
+	if (localTemplateNumber === 3) Content = CctvDrainSurveysLocalTemplate3;
+	if (localTemplateNumber === 4) Content = CctvDrainSurveysLocalTemplate4;
+	if (localTemplateNumber === 5) Content = CctvDrainSurveysLocalTemplate5;
+	if (localTemplateNumber === 6) Content = CctvDrainSurveysLocalTemplate6;
+}
+if (serviceSlug === 'drain-repairs') {
+	if (!localTemplateNumber) Content = DrainRepairs;
+	if (localTemplateNumber === 1) Content = DrainRepairsLocalTemplate1;
+	if (localTemplateNumber === 2) Content = DrainRepairsLocalTemplate2;
+	if (localTemplateNumber === 3) Content = DrainRepairsLocalTemplate3;
+}
+if (serviceSlug === 'soakaways-septic-tanks') {
+	if (!localTemplateNumber) Content = Soakaways;
+	if (localTemplateNumber === 1) Content = SoakawaysLocalTemplate1;
+	if (localTemplateNumber === 2) Content = SoakawaysLocalTemplate2;
+	if (localTemplateNumber === 3) Content = SoakawaysLocalTemplate3;
+}
+if (serviceSlug === 'gutter-cleaning') {
+	if (!localTemplateNumber) Content = GutterCleaning;
+	if (localTemplateNumber === 1) Content = GutterCleaningLocalTemplate1;
+	if (localTemplateNumber === 2) Content = GutterCleaningLocalTemplate2;
+	if (localTemplateNumber === 3) Content = GutterCleaningLocalTemplate3;
+}
+---
+
+<Section>
+	<div class="grid" data-template={localTemplateNumber}>
+		<Content location={location} locationSlug={locationSlug} />
+	</div>
+</Section>
+
+<style lang="scss">
+	main {
+		padding: var(--scale-32-64) 0;
+	}
+
+	.grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		gap: var(--scale-32-64);
+	}
+
+	.inner-wrapper {
+		display: grid;
+		gap: var(--scale-32-64);
+	}
+
+	.text {
+		display: grid;
+		gap: var(--scale-16-32);
+	}
+
+	.row {
+		display: flex;
+		gap: var(--scale-32-64);
+		align-items: start;
+		flex-direction: column;
+
+		@media (min-width: 768px) {
+			flex-direction: row;
+		}
+
+		.text {
+			width: 60%;
+		}
+
+		aside {
+			width: 40%;
+		}
+	}
+</style>

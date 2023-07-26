@@ -1,0 +1,66 @@
+---
+import ServiceInfoCard from '../../../../ServiceInfoCard.astro';
+import BlockedToilets from '../../../../../images/info-blocked-toilets.jpg';
+import BlockedSinks from '../../../../../images/info-blocked-sinks.jpg';
+import BlockedDrains from '../../../../../images/info-blocked-drains.jpg';
+
+interface Props {
+	location: string;
+}
+
+const { location } = Astro.props;
+---
+
+<ServiceInfoCard
+	title={`Facing blocked drain issues in your ${location} home? Contact us today!`}
+	image={BlockedDrains}
+>
+	<p>
+		Blocked drains can be a real mess for people because it entails flooding, corrosion and in
+		extreme cases, expensive repairs. Don’t worry; we got your back.
+	</p>
+	<p>
+		Our experience-backed blocked drain clearance service in {location} includes everything from drain
+		investigation to cleanup services. Our services have proved invaluable to residents facing plumbing
+		and drainage issues in their {location} home.
+	</p>
+</ServiceInfoCard>
+
+<ServiceInfoCard
+	title={`Effective solutions to Blocked Toilets in ${location}`}
+	image={BlockedToilets}
+	imagePosition="left"
+>
+	<p>
+		Blocked drains are a common problem, but aggravates to something serious when left unattended.
+		Are you noticing any of the following signs?
+	</p>
+	<ul>
+		<li>Water starts to back up from the outlet of a kitchen or bathroom sink.</li>
+		<li>Pools of water forming around the drain in the shower area.</li>
+		<li>Slow drainage of water after forming pools around the outlet.</li>
+		<li>Toilet water bubbles when you turn on the sink.</li>
+	</ul>
+	<p>
+		If yes, then choose us as the blocked drain specialist in {location}. Our team will take
+		effective measures to disintegrate the contaminants and make your drains free-flowing again.
+		Just give us a call, and we will be there in no time.
+	</p>
+</ServiceInfoCard>
+
+<ServiceInfoCard
+	title={`Clearing Blocked Sinks in ${location} made easier and simpler`}
+	image={BlockedSinks}
+>
+	<p>
+		Gurgling sounds coming from drains, especially after running the dishwasher and washing machine,
+		and rotting smell emanating from the sink in your kitchen are signs that your kitchen sink is
+		blocked.
+	</p>
+	<p>
+		Clearing such blockages can be a troublesome, and sometimes, an expensive affair. Let a blocked
+		drain cleaning specialist from our team assist you. We bring along the best-in-trade tools and
+		mechanical or micro-jetting equipment to help you get rid of the issue without disrupting your
+		budget or daily life.
+	</p>
+</ServiceInfoCard>

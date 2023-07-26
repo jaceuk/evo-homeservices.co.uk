@@ -1,0 +1,66 @@
+---
+import ServiceInfoCard from '../../../../ServiceInfoCard.astro';
+import BlockedToilets from '../../../../../images/info-blocked-toilets.jpg';
+import BlockedSinks from '../../../../../images/info-blocked-sinks.jpg';
+import BlockedDrains from '../../../../../images/info-blocked-drains.jpg';
+
+interface Props {
+	location: string;
+}
+
+const { location } = Astro.props;
+---
+
+<ServiceInfoCard title={`Blocked Drains in ${location}`} image={BlockedDrains}>
+	<p>
+		We have a variety of tools available to assist in clearing blocked drains. For external
+		blockages we would generally use either drain rods with a variety of attachments, or for more
+		stubborn blockages we would use a high pressure jet with a variety of specialist cleaning heads.
+	</p>
+	<p>
+		During the drain clearance we may be able to detect an underlying problem that has caused the
+		drain blockage, such as pipe damage or root growth. Under such circumstances we are able
+		investigate further and perform a CCTV drainage survey to ensure further drain blockages are
+		unlikely to occur again.
+	</p>
+</ServiceInfoCard>
+
+<ServiceInfoCard
+	title={`Blocked Toilets in ${location}`}
+	image={BlockedToilets}
+	imagePosition="left"
+>
+	<p>
+		Toilet blockages manifest themselves in a variety of ways such as the toilet bowl emptying
+		slowly or rising water in the bath. They mainly occur because of obstruction of the drain by an
+		object which could be wipes, excess toilet paper, or general waste.
+	</p>
+	<p>
+		We appreciate a toilet blockage needs to be dealt with as quickly as possible, especially if it
+		is the only toilet in the house, and consequently we are available to attend any blockage in or
+		around {location}
+		<strong>quickly and at any time of the day or night</strong>.
+	</p>
+	<p>
+		Once the blockage is cleared we can flush through and/or survey the drains for you to ensure it
+		doesn't happen again.
+	</p>
+</ServiceInfoCard>
+
+<ServiceInfoCard title={`Blocked Sinks in ${location}`} image={BlockedSinks}>
+	<p>
+		Sink, basin and bath blockages are always a major inconvenience and need to be dealt with
+		quickly.
+	</p>
+	<p>
+		The thin diameter of sink and basin pipework can make the blockage clearance difficult to deal
+		with, especially if the blockage is in a concealed or inaccessible position.
+	</p>
+	<p>
+		Fortunately we have both the tools and experience that enable us to deal with virtually all
+		blockages in a tidy and efficient manner, so if you live in {location} and you want your blockage
+		cleared quickly and with <strong>mimumum fuss</strong> please we are available at <strong
+			>any time, day or night</strong
+		>.
+	</p>
+</ServiceInfoCard>
